@@ -34,6 +34,11 @@ void fill_bits(int x, int nbits, char *bits)
         bits[nbits - i - 1] = (x & (1 << i)) ? '1' : '0';
 }
 
+int is_pow2(int x)
+{
+    return (x & (x - 1)) > 0;
+}
+
 int main(int argc, char *argv[]) 
 {
     int p = argc > 1 ? atoi(argv[1]) : 48;
